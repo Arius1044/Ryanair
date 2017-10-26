@@ -12,11 +12,16 @@ private:
 	unsigned int count;
 	string bort_number;
 	string model;
+	bool status;
 
 public:
 	Plane();
 	Plane(string  _bort_number_);
 	void print() const;
 	void operator[] (int i) const;
+	bool get_status() const;
+	string get_bort_number() const;
+	string get_model() const;
+	unsigned int get_count() const;
 	~Plane();
 };

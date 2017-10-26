@@ -13,14 +13,17 @@ protected:
 	Airport  second_airport;
 	string time;
 	Plane plane;
+	bool status;
 
 public:
 	Flight();
-	Flight(Airport _first_airport_, Airport _second_airport_, Plane _plane_, string _time_);
-	Airport get_First_airport();
-	Airport get_Second_airport();
-	string get_Time();
-	Plane get_Plane();
+	Flight(Airport _first_airport_, Airport _second_airport_, Plane _plane_, string _time_, bool _status_);
+	Airport get_First_airport() const;
+	Airport get_Second_airport() const;
+	string get_Time() const;
+	Plane get_Plane() const;
+	bool get_status() const;
+	void print() const;
 	~Flight();
 };
 

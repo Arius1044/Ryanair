@@ -51,6 +51,23 @@ void Plane::operator[] (int i) const
 	places[i].check_passenger();
 }
 
+bool Plane::get_status() const
+{
+	return status;
+}
+string Plane::get_bort_number() const
+{
+	return bort_number;
+}
+string Plane::get_model() const
+{
+	return model;
+}
+unsigned int Plane::get_count() const
+{
+	return count;
+}
+
 Plane::~Plane()
 {
 	delete[] places;
