@@ -37,12 +37,12 @@ string Airport::get_Airport_name()const
 
 string Airport::get_Airport_country()const
 {
-	return name;
+	return country;
 }
 
 string Airport::get_Airport_city()const
 {
-	return name;
+	return city;
 }
 
 string Airport::get_Airport_contact_number()const
@@ -52,14 +52,9 @@ string Airport::get_Airport_contact_number()const
 
 void Airport::print_info_airport()const
 {
-	cout << name << " " << country << " " << city << " " << contact_number << endl;
+	cout << name << "\t\t" << country << "\t\t" << city << "\t\t" << contact_number << endl;
 }
 
 Airport:: ~Airport()
 {
-	cout << "Destructor" << endl;
-	name = "incognito";
-	country = "incognito";
-	city = "incognito";
-	contact_number = "incognito";
 }
