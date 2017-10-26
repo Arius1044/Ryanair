@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 
+using namespace std;
+
 Passenger::Passenger()
 {
 	name = "incognito";
@@ -10,7 +12,7 @@ Passenger::Passenger()
 	phonenumber = 0;
 	passport_series = "";
 	passport_number = 0;
-	nationality = "huy_zna_yuaka";
+	nationality = "";
 }
 
 Passenger::Passenger(string _name, string _sername, string _sex, string _passport_series, unsigned long int _passport_number, unsigned long int _phonenumber, string _nationality)
@@ -62,7 +64,7 @@ void Passenger::setPassport_series(string _passport_series)
 	passport_series = _passport_series;
 }
 
-string Passenger::getPassport_number() const
+unsigned long int Passenger::getPassport_number() const
 {
 	return passport_number;
 }

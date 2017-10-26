@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>;
 #include "Airport.h";
 using namespace std;
@@ -6,7 +7,7 @@ Airport::Airport() : name("incognito"), country("incognito"), city("incognito"),
 {
 }
 
-Airport::Airport(string _name_, string _country_, string _city_, long long  _contact_number_) : name(_name_), country(_country_), city(_city_),contact_number(_contact_number_)
+Airport::Airport(string _name_, string _country_, string _city_, long long  _contact_number_) : name(_name_), country(_country_), city(_city_), contact_number(_contact_number_)
 {
 }
 

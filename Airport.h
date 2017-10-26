@@ -26,3 +26,4 @@ public:
 	void print_info_airport()const;
 	~Airport();
 };
+
