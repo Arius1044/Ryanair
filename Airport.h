@@ -11,7 +11,7 @@ private:
 	long long contact_number;
 public:
 	Airport();
-	Airport(string _name_, string _country_, string _city_, string _contact_number_);
+	Airport(string _name_, string _country_, string _city_, long long _contact_number_);
 
 	void set_Airport_name(string _name_);
 	void set_Airport_country(string _country_);
