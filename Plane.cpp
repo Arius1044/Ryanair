@@ -4,41 +4,18 @@
 
 using namespace std;
 
-Plane::Plane(string _bort_number_, unsigned int _count_) 
-{
-
-	bort_number.assign(_bort_number_);
-	count = _count_;
-
-
-	for (int i = 0; i < count; i++)
-	{
-		if (i <= 10)
-		{
-			string pl = "VIP_";
-			pl += (i + 1);
-			places[i] = Place(pl, 1);
-		}
-		else 
-		{
-			string pl = "STD_";
-			pl += (i + 1);
-			places[i] = Place(pl, 1);
-		}
-	}
-
-}
 Plane::Plane(string _bort_number_)
 {
 
 	bort_number = _bort_number_;
 
 	string path;
-	path.assign(_bort_number_ + ".txt");
+	path = _bort_number_ + ".txt";
 
 	ifstream file;
-	file.open("Planes\\"+path);
+	file.open("Planes\\" + path);
 
+	file >> model;
 	int i = 0;
 	while (!file.eof())
 	{
@@ -53,13 +30,19 @@ Plane::Plane(string _bort_number_)
 
 void Plane::print() const
 {
-	cout << "PLANE: "<< bort_number<<"\n\n";
-	cout << "PLACE\tSTATUS\n";
+	cout << "PLANE: " << bort_number << "\n\n";
+	cout << "MODEL: " << model << "\n\n";
+	cout << "PLACE\t\tSTATUS\n";
 	cout << "----------------------\n";
 	for (int i = 0; i < count; i++)
 	{
-		places[i].print();
+		cout << i + 1 << ". "; places[i].print();
 	}
+}
+
+void Plane::operator[] (int i) const
+{
+	places[i].check_passenger();
 }
 
 Plane::~Plane()

@@ -1,29 +1,47 @@
 #include "Passenger.h"
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <time.h>
 
 using namespace std;
 
 Passenger::Passenger()
 {
-	name = "incognito";
-	sername = "unbeknown";
-	sex = "unknown";
-	phonenumber = 0;
-	passport_series = "";
-	passport_number = 0;
-	nationality = "";
+	unsigned int i = 0;
+
+
+	int k = 0;
+	int k2 = 0;
+
+	string *rname = new string[101];
+	string *sbname = new string[101];
+
+	ifstream file("Generate\\subnames.txt");
+	ifstream file_2("Generate\\names.txt");
+
+	while (k!=100) file >> rname[k++];
+	while (k2!=100) file_2 >> sbname[k2++];
+
+	name = rname[rand() % k];
+	sername = sbname[rand() % k2];
+	phonenumber = 380670000000 + rand() % 999 * 10000 + rand() % 7777;
+	passport_series = char(90 - rand() % 25) + char(90 - rand() % 25);
+	passport_number = (rand() % 9) * 1000 + rand() % 9990;
+
+	file.close();
+	file_2.close();
+
+	delete[] rname, sbname;
 }
 
-Passenger::Passenger(string _name, string _sername, string _sex, string _passport_series, unsigned long int _passport_number, unsigned long int _phonenumber, string _nationality)
+Passenger::Passenger(string _name, string _sername, string _passport_series, unsigned long int _passport_number, unsigned long int _phonenumber)
 {
 	name = _name;
 	sername = _sername;
-	sex = _sex;
 	passport_series = _passport_series;
 	passport_number = _passport_number;
 	phonenumber = _phonenumber;
-	nationality = _nationality;
 }
 
 string Passenger::getName()const {
@@ -44,15 +62,6 @@ void Passenger::setSername(string _sername)
 	sername = _sername;
 }
 
-
-string Passenger::getSex() const
-{
-	return sex;
-}
-void Passenger::setSex(string _sex)
-{
-	sex = _sex;
-}
 
 string Passenger::getPassport_series() const
 {
@@ -85,15 +94,16 @@ void Passenger::setPhonenumber(unsigned long int _phonenumber)
 }
 
 
-string Passenger::getNationality() const
+void Passenger::info() const
 {
-	return nationality;
-}
-void Passenger::setNationality(string _nationality)
-{
-	nationality = _nationality;
+	cout << "\n\nNAME: " << name << endl;
+	cout << "SERNAME: " << sername << endl;
+	cout << "PASSPORT SERIES: " << passport_series << endl;
+	cout << "PASSPORT NUMBER: " << passport_number << endl;
+	cout << "PHONE NUMBER: " << phonenumber << endl;
 }
 
 Passenger::~Passenger()
 {
 }
+

@@ -13,17 +13,17 @@ Airport::Airport(string _name_, string _country_, string _city_, long long  _con
 
 void Airport::set_Airport_name(string _name_)
 {
-	name.assign(_name_);
+	name = _name_;
 }
 
 void Airport::set_Airport_country(string _country_)
 {
-	country.assign(_country_);
+	country = _country_;
 }
 
 void Airport::set_Airport_city(string _city_)
 {
-	city.assign(_city_);
+	city = _city_;
 }
 
 void Airport::set_Airport_contact_number(long long _contact_number_)
@@ -59,3 +59,4 @@ void Airport::print_info_airport()const
 Airport:: ~Airport()
 {
 }
+

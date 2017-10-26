@@ -13,6 +13,7 @@ Place::Place(string _place_number, bool _check_for_free)
 {
 	place_number = _place_number;
 	check_for_free = _check_for_free;
+	if (check_for_free) passenger = Passenger();
 }
 
 string Place::getPlace_number() const
@@ -33,15 +34,20 @@ bool Place::getCheck_for_free() const
 void Place::setCheck_for_free(bool _check_for_free)
 {
 	check_for_free = _check_for_free;
+	if (check_for_free) passenger = Passenger();
 }
 
-
+void Place::check_passenger() const
+{
+	if (check_for_free) passenger.info();
+	else cout << "\n\nEMPTY\n\n";
+}
 
 void Place::print() const
 {
 	cout << place_number << "\t";
 	if (check_for_free) cout << "free" << endl;
-	else cout<<"not free"<< endl;
+	else cout << "not free" << endl;
 }
 
 
