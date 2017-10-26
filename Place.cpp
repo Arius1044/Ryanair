@@ -1,18 +1,18 @@
 #include "Place.h"
 #include <string>
 
+using namespace std;
+
 Place::Place()
 {
 	place_number = "nothing";
 	check_for_free = 0;
-	double price = 0;
 }
 
-Place::Place(string _place_number, bool _check_for_free, double _price)
+Place::Place(string _place_number, bool _check_for_free)
 {
 	place_number = _place_number;
 	check_for_free = _check_for_free;
-
 }
 
 string Place::getPlace_number() const
@@ -35,15 +35,14 @@ void Place::setCheck_for_free(bool _check_for_free)
 	check_for_free = _check_for_free;
 }
 
-double Place::getPrice() const
+
+
+void Place::print() const
 {
-	return price;
+	cout << place_number << "\t";
+	if (check_for_free) cout << "free" << endl;
+	else cout<<"not free"<< endl;
 }
-
-void Place::setPrice(double _price) {
-	price = _price;
-}
-
 
 
 Place::~Place()
