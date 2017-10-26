@@ -4,6 +4,12 @@
 
 using namespace std;
 
+Plane::Plane()
+{
+	bort_number = "";
+	model = "";
+	count = 0;
+}
 Plane::Plane(string _bort_number_)
 {
 
