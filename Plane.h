@@ -14,6 +14,7 @@ private:
 	string model;
 
 public:
+	Plane();
 	Plane(string  _bort_number_);
 	void print() const;
 	void operator[] (int i) const;
